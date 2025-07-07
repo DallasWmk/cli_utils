@@ -2,17 +2,19 @@
 
 APP=$(gum input --placeholder "app name")
 CWD=$(pwd)
-mkdir "$CWD/$APP" || exit 1
-mkdir "$CWD/$APP/cmd" || exit 1
-cd "$CWD/$APP/cmd" || exit 1
+cd "$CWD" || exit 1
+mkdir "$APP" || exit 1
+cd "$APP" || exit 1
 go mod init github.com/DallasWmk/"$APP"
-cd ..
-touch "$CWD/$APP/cmd/main.go"
+git init
+git branch -m main
+mkdir "cmd" || exit 1
+touch "cmd/main.go"
 
-mkdir "$CWD/$APP/internal"
-mkdir "$CWD/$APP/internal/$APP"
-mkdir "$CWD/$APP/internal/config"
+mkdir "internal"
+mkdir "internal/$APP"
+mkdir "internal/config"
 
-mkdir "$CWD/$APP/pkg"
+mkdir "pkg"
 
-touch "$CWD/$APP/README.md"
+touch "README.md"
