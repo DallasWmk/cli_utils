@@ -14,3 +14,5 @@ mkdir "$CWD/$APP/internal/$APP"
 mkdir "$CWD/$APP/internal/config"
 
 mkdir "$CWD/$APP/pkg"
+
+touch "$CWD/$APP/README.md"
